@@ -1,0 +1,10 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 6379
+  },
+  "paths": [
+    "/media/drive1/boards",
+    "/media/drive2/boards"
+  ]
+}

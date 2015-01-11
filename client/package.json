@@ -1,0 +1,9 @@
+{
+  "name": "NAS-Media-Purge-Client",
+  "description": "Client for FoolFuuka NAS Media Purge Plugin",
+  "version": "1.0.0",
+  "dependencies": {
+    "hiredis": "*",
+    "redis": "*"
+  }
+}
