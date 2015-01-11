@@ -20,7 +20,7 @@ fs.readFile('./config.json', { encoding: 'utf8' }, function (err, config) {
   config = JSON.parse(config);
   client = redis.createClient(config.server.port, config.server.host);
 
-  client.subscribe('foolfuuka:nas-media-purge');
+  client.subscribe('foolfuuka:plugin:nas-media-purge');
   client.on('message', function (channel, file) {
     for (var i = 0, len = config.paths.length; i < len; i++) {
       processFile(config.paths[i], file);

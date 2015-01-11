@@ -66,7 +66,7 @@ class NASMediaPurge extends Model
                 $connection->connect();
                 foreach ($path as $k => $file) {
                     if (null !== $file) {
-                        $connection->publish('foolfuuka:nas-media-purge', $path[$k]);
+                        $connection->publish('foolfuuka:plugin:nas-media-purge', $path[$k]);
                     }
                 }
             } catch (CommunicationException $e) {
