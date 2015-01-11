@@ -6,5 +6,6 @@
   "paths": [
     "/media/drive1/boards",
     "/media/drive2/boards"
-  ]
+  ],
+  "purge": true
 }
