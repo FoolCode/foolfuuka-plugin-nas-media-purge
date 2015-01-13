@@ -60,7 +60,7 @@ class NASMediaPurge extends Model
 
     public function purge($path)
     {
-        if (($server = $this->getServer()) {
+        if (($server = $this->getServer())) {
             $connection = new Client($server);
             try {
                 $connection->connect();
