@@ -8,7 +8,7 @@ class HHVM_NASMediaPurge
 {
     public function run()
     {
-        Event::forge('Foolz\Plugin\Plugin::execute.foolz/foolfuuka-plugin-nas-media-purge')
+        Event::forge('Foolz\Plugin\Plugin::execute#foolz/foolfuuka-plugin-nas-media-purge')
             ->setCall(function ($result) {
                 /* @var Context $context */
                 $context = $result->getParam('context');
@@ -24,7 +24,7 @@ class HHVM_NASMediaPurge
                     ->register('foolfuuka-plugin.nas_media_purge', 'Foolz\Foolfuuka\Plugins\NASMediaPurge\Model\NASMediaPurge')
                     ->addArgument($context);
 
-                Event::forge('Foolz\Foolframe\Model\Context.handleWeb.has_auth')
+                Event::forge('Foolz\Foolframe\Model\Context::handleWeb#obj.afterAuth')
                     ->setCall(function ($result) use ($context) {
                         // don't add the admin panels if the user is not an admin
                         if ($context->getService('auth')->hasAccess('maccess.admin')) {
@@ -41,7 +41,7 @@ class HHVM_NASMediaPurge
                                 )
                             );
 
-                            Event::forge('Foolz\Foolframe\Controller\Admin.before.sidebar.add')
+                            Event::forge('Foolz\Foolframe\Controller\Admin::before#var.sidebar')
                                 ->setCall(function ($result) {
                                     $sidebar = $result->getParam('sidebar');
                                     $sidebar[]['plugins'] = [
@@ -52,7 +52,7 @@ class HHVM_NASMediaPurge
                         }
                     });
 
-                Event::forge('Foolz\Foolfuuka\Model\Media::delete.call.before.method')
+                Event::forge('Foolz\Foolfuuka\Model\Media::delete#call.beforeMethod')
                     ->setCall(function ($result) use ($context) {
                         $context->getService('foolfuuka-plugin.nas_media_purge')->beforeDeleteMedia($result);
                     });
