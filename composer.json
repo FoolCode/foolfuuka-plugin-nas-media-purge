@@ -1,7 +1,7 @@
 {
   "name": "foolz/foolfuuka-plugin-nas-media-purge",
   "type": "foolz-foolfuuka-plugin",
-  "description": "This plugin allows for the removal of media files from network attached storages.",
+  "description": "Allows FoolFuuka to delete content on different servers and/or drives. (Requires: Redis)",
   "version": "1.0.0",
   "keywords": ["nas", "media", "purge"],
   "homepage": "http://www.foolz.us",
