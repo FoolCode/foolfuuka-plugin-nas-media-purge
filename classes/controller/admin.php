@@ -1,12 +1,12 @@
 <?php
 
-namespace Foolz\Foolframe\Controller\Admin\Plugins;
+namespace Foolz\FoolFrame\Controller\Admin\Plugins;
 
-use Foolz\Foolframe\Model\Validation\ActiveConstraint\Trim;
+use Foolz\FoolFrame\Model\Validation\ActiveConstraint\Trim;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class NASMediaPurge extends \Foolz\Foolframe\Controller\Admin
+class NASMediaPurge extends \Foolz\FoolFrame\Controller\Admin
 {
     public function before()
     {

@@ -1,7 +1,7 @@
 <?php
 
-use Foolz\Foolframe\Model\Autoloader;
-use Foolz\Foolframe\Model\Context;
+use Foolz\FoolFrame\Model\Autoloader;
+use Foolz\FoolFrame\Model\Context;
 use Foolz\Plugin\Event;
 
 class HHVM_NASMediaPurge
@@ -16,12 +16,12 @@ class HHVM_NASMediaPurge
                 $autoloader = $context->getService('autoloader');
 
                 $autoloader->addClassMap([
-                    'Foolz\Foolframe\Controller\Admin\Plugins\NASMediaPurge' => __DIR__ . '/classes/controller/admin.php',
-                    'Foolz\Foolfuuka\Plugins\NASMediaPurge\Model\NASMediaPurge' => __DIR__ . '/classes/model/purge.php'
+                    'Foolz\FoolFrame\Controller\Admin\Plugins\NASMediaPurge' => __DIR__ . '/classes/controller/admin.php',
+                    'Foolz\FoolFuuka\Plugins\NASMediaPurge\Model\NASMediaPurge' => __DIR__ . '/classes/model/purge.php'
                 ]);
 
                 $context->getContainer()
-                    ->register('foolfuuka-plugin.nas_media_purge', 'Foolz\Foolfuuka\Plugins\NASMediaPurge\Model\NASMediaPurge')
+                    ->register('foolfuuka-plugin.nas_media_purge', 'Foolz\FoolFuuka\Plugins\NASMediaPurge\Model\NASMediaPurge')
                     ->addArgument($context);
 
                 Event::forge('Foolz\FoolFrame\Model\Context::handleWeb#obj.afterAuth')
@@ -33,7 +33,7 @@ class HHVM_NASMediaPurge
                                     '/admin/plugins/nas_media_purge/{_suffix}',
                                     [
                                         '_suffix' => 'manage',
-                                        '_controller' => 'Foolz\Foolframe\Controller\Admin\Plugins\NASMediaPurge::manage'
+                                        '_controller' => 'Foolz\FoolFrame\Controller\Admin\Plugins\NASMediaPurge::manage'
                                     ],
                                     [
                                         '_suffix' => '.*'
